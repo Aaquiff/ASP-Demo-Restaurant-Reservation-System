@@ -1,0 +1,4 @@
+HotelReservationAPI/bin/
+HotelReservationAPI/obj/
+packages/
+*.suo
