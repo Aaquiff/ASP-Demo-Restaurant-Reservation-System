@@ -118,22 +118,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FoodOrder.html" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="js\FoodOrder.js" />
     <Content Include="js\index.js" />
+    <Content Include="js\MakeReservation.js" />
     <Content Include="js\RegisterCustomer.js" />
+    <Content Include="MakeReservation.html" />
     <Content Include="RegisterCustomer.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\FoodOrdersController.cs" />
+    <Compile Include="Controllers\FoodsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\ReservationController.cs" />
+    <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Food.cs" />
+    <Compile Include="Models\FoodOrder.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
