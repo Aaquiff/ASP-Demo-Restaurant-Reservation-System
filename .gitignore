@@ -3,3 +3,7 @@ HotelReservationAPI/obj/
 packages/
 *.suo
 .vs/
+RRSys/obj/
+RRSys/bin/
+RRSys.Tests/bin/
+RRSys/ApplicationInsights.config
