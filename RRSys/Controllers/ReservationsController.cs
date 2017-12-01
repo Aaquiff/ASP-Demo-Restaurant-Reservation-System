@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace HotelReservationAPI.Controllers
 {
+    [Authorize]
     public class ReservationsController : ApiController
     {
         Random r = new Random();
