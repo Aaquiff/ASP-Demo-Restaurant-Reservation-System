@@ -6,7 +6,6 @@ packages/
 RRSys/obj/
 RRSys/bin/
 RRSys.Tests/bin/
-RRSys/ApplicationInsights.config
 RRSys.Tests/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 RRSys.Tests/obj/Debug/RRSys.Tests.csproj.FileListAbsolute.txt
 RRSys.Tests/obj/Debug/RRSys.Tests.csprojResolveAssemblyReference.cache
