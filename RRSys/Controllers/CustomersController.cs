@@ -8,7 +8,6 @@ using System.Web.Http;
 
 namespace HotelReservationAPI.Controllers
 {
-    [Authorize]
     public class CustomersController : ApiController
     {
         static List<Customer> customers = new List<Customer>()

@@ -1,23 +1,24 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <title>Login</title>
+    <title>Create Reservation</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="container">
+        <h1>Create Reservat</h1>
         <div class="form-group">
-            <label for="usr">Username:</label>
-            <input type="text" class="form-control" id="username">
+            <label for="usr">Number of Guests:</label>
+            <input type="text" class="form-control" id="numGuests">
         </div>
         <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="password">
+            <label for="pwd">Time of Arrival:</label>
+            <input type="password" class="form-control" id="timeOfArrival">
         </div>
         <div class="form-group">
-            <button onclick="login()" type="button" class="btn">Login</button>
+            <button onclick="createReservation()" type="button" class="btn">Login</button>
         </div>
     </div>
 
@@ -27,7 +28,7 @@
         var uri = 'http://localhost:62619/api/products';
         var uri2 = 'http://localhost:62619/api/customers';
 
-        function login() {
+        function createReservation() {
 
             var loginData = {
                 grant_type: 'password',
@@ -48,8 +49,5 @@
 
 
     </script>
-    
-    
 </body>
 </html>
-

@@ -11,3 +11,4 @@ RRSys.Tests/obj/Debug/RRSys.Tests.csproj.FileListAbsolute.txt
 RRSys.Tests/obj/Debug/RRSys.Tests.csprojResolveAssemblyReference.cache
 RRSys.Tests/obj/Debug/RRSys.Tests.dll
 RRSys.Tests/obj/
+*.user

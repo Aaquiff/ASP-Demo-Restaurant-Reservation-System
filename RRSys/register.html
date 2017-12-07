@@ -1,12 +1,13 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <title>Login</title>
+    <title>Register</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+
     <div class="container">
         <div class="form-group">
             <label for="usr">Username:</label>
@@ -17,39 +18,33 @@
             <input type="password" class="form-control" id="password">
         </div>
         <div class="form-group">
-            <button onclick="login()" type="button" class="btn">Login</button>
+            <label for="pwd">Confirm Password:</label>
+            <input type="password" class="form-control" id="confirmPassword">
+        </div>
+        <div class="form-group">
+            <button onclick="register()" type="button" class="btn">Login</button>
         </div>
     </div>
 
     <script>
+        function register() {
 
-        // url of the web service
-        var uri = 'http://localhost:62619/api/products';
-        var uri2 = 'http://localhost:62619/api/customers';
-
-        function login() {
-
-            var loginData = {
-                grant_type: 'password',
-                username: $('#username').val(),
-                password: $('#password').val()
+            var data = {
+                Email: $('#username').val(),
+                Password: $('#password').val(),
+                ConfirmPassword: $('#confirmPassword').val()
             };
 
             $.ajax({
                 type: 'POST',
-                url: '/Token',
-                data: loginData
+                url: '/api/Account/Register',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(data)
             }).done(function (data) {
-                alert(data.userName);
-                // Cache the access token in session storage.
-                sessionStorage.setItem(tokenKey, data.access_token);
+                alert("Done!");
             });
         }
-
-
     </script>
-    
-    
+
 </body>
 </html>
-

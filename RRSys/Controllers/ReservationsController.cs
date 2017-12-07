@@ -8,14 +8,13 @@ using System.Web.Http;
 
 namespace HotelReservationAPI.Controllers
 {
-    [Authorize]
     public class ReservationsController : ApiController
     {
         Random r = new Random();
 
         static List<Reservation> reservations = new List<Reservation>()
         {
-            new Reservation { ReservationId = "1" , UserId = "1", MobileNumber="13413343", NumberOfGuests = 10, TableId = "1", TimeOfArrival = new DateTime(2017,12,1 ) }
+            new Reservation { ReservationId = "1" , UserId = "1", NumberOfGuests = 10, TableId = "1", TimeOfArrival = new DateTime(2017,12,1 ) }
         };
 
         public IEnumerable<Reservation> GetAllReservations()
