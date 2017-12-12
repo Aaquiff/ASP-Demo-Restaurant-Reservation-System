@@ -14,6 +14,11 @@
     self.loginPassword = ko.observable();
     self.errors = ko.observableArray([]);
 
+    self.userId = ko.observable();
+    self.email = ko.observable();
+    self.numberOfGuests = ko.observable();
+    self.timeOfArrival = ko.observable();
+
     function showError(jqXHR) {
 
         self.result(jqXHR.status + ': ' + jqXHR.statusText);
@@ -116,7 +121,25 @@
         }).fail(showError);
     }
 
+    self.createReservation = function (){
+        alert('test');
+        var data = {
+            UserId: self.userId(),
+            Email: self.email(),
+            NumberOfGuests: self.numberOfGuests(),
+            password: self.timeOfArrival()
+        };
 
+        $.ajax({
+            type: 'POST',
+            url: '/api/reservations',
+            data: data
+        }).done(function (data) {
+            alert(data.userName);
+            // Cache the access token in session storage.
+            sessionStorage.setItem(tokenKey, data.access_token);
+        });
+    }
 
 }
 

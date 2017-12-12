@@ -1,0 +1,23 @@
+﻿@section Scripts {
+    @Scripts.Render("~/bundles/app")
+}
+
+<div class="row" >
+    
+</div>
+
+<script>
+    window.onload = function () {
+        
+
+        $.ajax({
+            type: 'GET',
+            url: '/api/foods'
+        }).done(function (data) {
+            for (var i = 0; i < data.length; i++) {
+                alert(data[i].Name);
+            }
+        }).fail(function () { alert('error') });
+
+    }
+</script>

@@ -14,5 +14,26 @@ namespace RRSys.Controllers
 
             return View();
         }
+
+        public ActionResult Login()
+        {
+            ViewBag.Title = "Login";
+
+            return View();
+        }
+
+        public ActionResult CreateReservation()
+        {
+            ViewBag.Title = "Create Reservation";
+
+            return View();
+        }
+
+        public ActionResult FoodList()
+        {
+            ViewBag.Title = "Order Foods";
+
+            return View();
+        }
     }
 }

@@ -17,13 +17,11 @@ namespace HotelReservationAPI.Controllers
             new Reservation { ReservationId = "1" , UserId = "1", NumberOfGuests = 10, TableId = "1", TimeOfArrival = new DateTime(2017,12,1 ) }
         };
 
-        [Authorize]
         public IEnumerable<Reservation> GetAllReservations()
         {
             return reservations;
         }
 
-        [Authorize]
         public IHttpActionResult PostReservation(Reservation reservation)
         {
             try
