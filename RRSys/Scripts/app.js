@@ -154,9 +154,11 @@
             url: '/api/reservations',
             data: data
         }).done(function (data) {
-            alert(data.userName);
-            // Cache the access token in session storage.
-            sessionStorage.setItem(tokenKey, data.access_token);
+            alert('Reservation Created');
+            self.userId('');
+            self.email('');
+            self.numberOfGuests('');
+            self.timeOfArrival('');
         });
     }
 
