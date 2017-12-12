@@ -19,6 +19,27 @@
     self.numberOfGuests = ko.observable();
     self.timeOfArrival = ko.observable();
 
+    self.foods = ko.observableArray([]);
+    self.selectedFoods = ko.observableArray([]);
+
+    self.addFoods = function (food) {
+        selectedFoods.push(food);
+    }
+
+    self.loadFoods = function () {
+        $.ajax({
+            type: 'GET',
+            url: '/api/foods'
+        }).done(function (data) {
+            for (var i = 0; i < data.length; i++) {
+                self.foods.push(data[i].Name);
+            }
+        }).fail(function () { alert('error') });
+    }
+    
+    self.loadFoods();
+    
+
     function showError(jqXHR) {
 
         self.result(jqXHR.status + ': ' + jqXHR.statusText);
