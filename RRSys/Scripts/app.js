@@ -23,7 +23,7 @@
     self.selectedFoods = ko.observableArray([]);
 
     self.addFoods = function (food) {
-        selectedFoods.push(food);
+        self.selectedFoods.push(food);
     }
 
     self.loadFoods = function () {
@@ -32,14 +32,13 @@
             url: '/api/foods'
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                self.foods.push(data[i].Name);
+                self.foods.push(data[i]);
             }
         }).fail(function () { alert('error') });
     }
     
     self.loadFoods();
     
-
     function showError(jqXHR) {
 
         self.result(jqXHR.status + ': ' + jqXHR.statusText);
@@ -143,7 +142,6 @@
     }
 
     self.createReservation = function (){
-        alert('test');
         var data = {
             UserId: self.userId(),
             Email: self.email(),
@@ -160,6 +158,23 @@
             // Cache the access token in session storage.
             sessionStorage.setItem(tokenKey, data.access_token);
         });
+    }
+
+    self.createFoodOrder = function () {
+        
+        var order = {
+            Foods: self.selectedFoods()
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '/api/foodorders',
+            data: order
+        }).done(function (data) {
+            alert('Order Placed');
+            self.selectedFoods.removeAll();
+            });
+
     }
 
 }

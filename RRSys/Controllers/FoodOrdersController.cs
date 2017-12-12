@@ -41,6 +41,7 @@ namespace HotelReservationAPI.Controllers
         {
             try
             {
+                foodOrder.OrderId = (new Random()).Next().ToString();
                 foodOrders.Add(foodOrder);
                 return Ok();
             }

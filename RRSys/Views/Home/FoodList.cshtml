@@ -3,18 +3,31 @@
 }
 
 
-<div class="row" id="foods">
-    <h1>Foods</h1>
-    <div class="form-group error-messages" data-bind="foreach: foods">
-        <div class="form-group">
-            <label data-bind="text: $data"></label>
+<div class="row">
+    <div class="col-sm-4">
+        <h3>Foods</h3>
+        <div class="form-group error-messages" data-bind="foreach: foods">
             <div class="form-group">
-                <button class="btn btn-default" data-bind="click: $parent.addFoods">Add To Cart</button>
+                <label data-bind="text: $data.Name"></label>
+                <div class="form-group">
+                    <button class="btn btn-primary" data-bind="click: $parent.addFoods">Add To Cart</button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="form-group error-messages" data-bind="foreach: selectedFoods">
-        <label data-bind="text: $data"></label>
+    <div class="col-sm-4">
+        <h3>Cart</h3>
+        <div class="form-group error-messages" data-bind="foreach: selectedFoods">
+            <div class="form-group">
+                <label data-bind="text: $data.Name"></label>
+            </div>
+        </div>
     </div>
-</div>
+    <div class="col-sm-4">
+        <h3>Check Out</h3>
+        <div class="form-group">
+            <button class="btn btn-success" data-bind="click: createFoodOrder">CheckOut</button>
+        </div>
+    </div>
 
+</div>
