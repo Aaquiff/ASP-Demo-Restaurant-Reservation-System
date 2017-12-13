@@ -35,14 +35,18 @@
                 <select class="form-control" data-bind="options: paymentTypes,
                        value: paymentType,
                        valueAllowUnset: false"></select>
+            </div>          
+            <div class="form-group">
+                <label>Amount:</label>
+                <input type="number" class="form-control" data-bind="value: amount">
             </div>
             <div class="form-group">
                 <label>Credit Card Number:</label>
                 <input type="number" class="form-control" data-bind="value: creditCardNumber">
             </div>
             <div class="form-group">
-                <label>Amount:</label>
-                <input type="number" class="form-control" data-bind="value: amount">
+                <label>Cardholder Name:</label>
+                <input type="text" class="form-control" data-bind="value: cardHolderName">
             </div>
             <div class="form-group">
                 <label>CVC:</label>

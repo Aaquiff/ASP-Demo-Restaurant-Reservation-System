@@ -21,6 +21,7 @@ namespace HotelReservationAPI.Models
     {
         public string PaymentType { get; set; }
         public int Amount { get; set; }
+        public string CardHolderName { get; set; }
         public string CreditCardNumber { get; set; }
         public int CVC { get; set; }
     }

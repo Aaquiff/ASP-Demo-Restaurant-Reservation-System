@@ -23,6 +23,7 @@
     self.paymentType = ko.observable();
     self.selectedFoods = ko.observableArray([]);
     self.creditCardNumber = ko.observable();
+    self.cardHolderName = ko.observable();
     self.amount = ko.observable();
     self.cvc = ko.observable();
     self.paymentTypes = ['Cash', 'Credit Card'];
@@ -176,7 +177,8 @@
                 PaymentType: self.paymentType(),
                 Amount: self.amount(),
                 CreditCardNumber: self.creditCardNumber(),
-                CVC: self.cvc()
+                CVC: self.cvc(),
+                CardHolderName: self.cardHolderName()
             }
         };
 
@@ -191,6 +193,7 @@
             self.amount('');
             self.creditCardNumber('');
             self.cvc('');
+            self.cardHolderName('');
             });
 
     }
