@@ -134,6 +134,7 @@
             data: loginData
         }).done(function (data) {
             self.user(data.userName);
+            self.userId(data.userName);
             // Cache the access token in session storage.
             sessionStorage.setItem(tokenKey, data.access_token);
             sessionStorage.setItem('userName', data.userName);
@@ -181,6 +182,12 @@
     }
 
     self.createFoodOrder = function () {
+
+        if (self.selectedFoods().length < 1)
+        {
+            alert('Cart is empty');
+            return;
+        }
         var order = {
             Foods: self.selectedFoods(),
             Payment : {
