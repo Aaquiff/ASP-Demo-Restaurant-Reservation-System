@@ -14,4 +14,5 @@ namespace HotelReservationAPI.Models
         public int NumberOfGuests { get; set; }
         public DateTime TimeOfArrival { get; set; }
     }
+
 }

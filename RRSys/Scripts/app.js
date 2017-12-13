@@ -20,7 +20,14 @@
     self.timeOfArrival = ko.observable();
 
     self.foods = ko.observableArray([]);
+    self.paymentType = ko.observable();
     self.selectedFoods = ko.observableArray([]);
+    self.creditCardNumber = ko.observable();
+    self.amount = ko.observable();
+    self.cvc = ko.observable();
+    self.paymentTypes = ['Cash', 'Credit Card'];
+    
+    self.userId = ko.observable();
 
     self.addFoods = function (food) {
         self.selectedFoods.push(food);
@@ -163,9 +170,14 @@
     }
 
     self.createFoodOrder = function () {
-        
         var order = {
-            Foods: self.selectedFoods()
+            Foods: self.selectedFoods(),
+            Payment : {
+                PaymentType: self.paymentType(),
+                Amount: self.amount(),
+                CreditCardNumber: self.creditCardNumber(),
+                CVC: self.cvc()
+            }
         };
 
         $.ajax({
@@ -175,6 +187,10 @@
         }).done(function (data) {
             alert('Order Placed');
             self.selectedFoods.removeAll();
+            self.paymentType('');
+            self.amount('');
+            self.creditCardNumber('');
+            self.cvc('');
             });
 
     }

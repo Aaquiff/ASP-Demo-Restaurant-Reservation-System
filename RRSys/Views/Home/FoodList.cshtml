@@ -23,30 +23,35 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-4" data-bind="submit: createFoodOrder">
-        <h3>Payment Information</h3>
-        <div class="form-group">
-            <label>Payment Method:</label>
-            <select class="form-control">
-                <option value="cash">Cash</option>
-                <option value="credit">Credit Card</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Credit Card Number:</label>
-            <input type="number" class="form-control" data-bind="value: creditCardNumber">
-        </div>
-        <div class="form-group">
-            <label>Amount:</label>
-            <input type="number" class="form-control" data-bind="value: amount">
-        </div>
-        <div class="form-group">
-            <label>CVC:</label>
-            <input type="number" class="form-control" data-bind="value: cvc">
-        </div>
-        <div class="form-group">
-            <button class="btn btn-success" data-bind="click: createFoodOrder">CheckOut</button>
-        </div>
+    <div class="col-sm-4" >
+        <form data-bind="submit: createFoodOrder">
+            <h3>Payment Information</h3>
+            <div class="form-group" data-bind="value: paymentType">
+                <label>Payment Method:</label>
+                @*<select class="form-control">
+                    <option value="cash">Cash</option>
+                    <option value="credit">Credit Card</option>
+                </select>*@
+                <select class="form-control" data-bind="options: paymentTypes,
+                       value: paymentType,
+                       valueAllowUnset: false"></select>
+            </div>
+            <div class="form-group">
+                <label>Credit Card Number:</label>
+                <input type="number" class="form-control" data-bind="value: creditCardNumber">
+            </div>
+            <div class="form-group">
+                <label>Amount:</label>
+                <input type="number" class="form-control" data-bind="value: amount">
+            </div>
+            <div class="form-group">
+                <label>CVC:</label>
+                <input type="number" class="form-control" data-bind="value: cvc">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success"type="submit">CheckOut</button>
+            </div>
+        </form>
     </div>
 
 </div>
