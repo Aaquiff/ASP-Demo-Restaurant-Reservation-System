@@ -18,6 +18,7 @@ namespace HotelReservationAPI.Controllers
             new Food { Name = "Rice and Curry" }
         };
 
+        [Authorize]
         public IEnumerable<Food> GetAllFoods()
         {
             return foods;

@@ -35,14 +35,22 @@
     }
 
     self.loadFoods = function () {
+        var userName = sessionStorage.getItem('userName');
+
+        var token = sessionStorage.getItem(tokenKey);
+        var headers = {};
+        if (token) {
+            headers.Authorization = 'Bearer ' + token;
+        }
         $.ajax({
             type: 'GET',
-            url: '/api/foods'
+            url: '/api/foods',
+            headers: headers
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
                 self.foods.push(data[i]);
             }
-        }).fail(function () { alert('error') });
+        }).fail(function () {  });
     }
     
     self.loadFoods();
@@ -95,6 +103,7 @@
 
         var data = {
             Email: self.registerEmail(),
+            Phone: self.registerEmail(),
             Password: self.registerPassword(),
             ConfirmPassword: self.registerPassword2()
         };
@@ -127,6 +136,7 @@
             self.user(data.userName);
             // Cache the access token in session storage.
             sessionStorage.setItem(tokenKey, data.access_token);
+            sessionStorage.setItem('userName', data.userName);
         }).fail(showError);
     }
 
