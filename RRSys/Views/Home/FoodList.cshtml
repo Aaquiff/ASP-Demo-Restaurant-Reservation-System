@@ -2,8 +2,17 @@
     @Scripts.Render("~/bundles/app")
 }
 
-
 <div class="row">
+
+    <div class="form-group error-messages" data-bind="foreach: errors">
+        <div class="alert alert-danger">
+            <p data-bind="text: $data" />
+        </div>
+
+    </div>
+</div>
+
+<div class="row" data-bind="onload: $parent.loadFoods">
     <div class="col-sm-4">
         <h3>Menu</h3>
         <div class="form-group error-messages" data-bind="foreach: foods">

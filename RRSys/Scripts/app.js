@@ -50,10 +50,10 @@
             for (var i = 0; i < data.length; i++) {
                 self.foods.push(data[i]);
             }
-        }).fail(function () {  });
+        }).fail(showError);
     }
     
-    self.loadFoods();
+    //self.loadFoods();
     
     function showError(jqXHR) {
 
@@ -122,6 +122,8 @@
         self.result('');
         self.errors.removeAll();
 
+        
+
         var loginData = {
             grant_type: 'password',
             username: self.loginEmail(),
@@ -138,6 +140,7 @@
             // Cache the access token in session storage.
             sessionStorage.setItem(tokenKey, data.access_token);
             sessionStorage.setItem('userName', data.userName);
+            alert('Logged in');
         }).fail(showError);
     }
 
@@ -178,7 +181,7 @@
             self.email('');
             self.numberOfGuests('');
             self.timeOfArrival('');
-        });
+        }).fail(showError);
     }
 
     self.createFoodOrder = function () {
@@ -211,7 +214,7 @@
             self.creditCardNumber('');
             self.cvc('');
             self.cardHolderName('');
-            });
+        }).fail(showError);
 
     }
 
