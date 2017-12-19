@@ -3,6 +3,16 @@
 }
 
 <div class="row">
+
+    <div class="form-group error-messages" data-bind="foreach: errors">
+        <div class="alert alert-danger">
+            <p data-bind="text: $data" />
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
     <div class="col-lg-12">
         <form data-bind="submit: createReservation">
             <h3>Create Reservation</h3>
